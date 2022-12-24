@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import Tasks from "./components/Tasks";
 import "./App.css";
+import AddTask from "./components/AddTask";
 
-function App() {
+const App = () => {
   const [tasks, setTasks] = useState([
     {
       id: "1",
@@ -24,6 +25,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
