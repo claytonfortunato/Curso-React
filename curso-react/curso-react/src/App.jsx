@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { v4 as uiidv4 } from "uuid";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -10,18 +11,19 @@ import TaskDetails from "./components/TaskDetails";
 import "./App.css";
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: "1",
-      title: "Estudar Programação",
-      completed: false,
-    },
-    {
-      id: "2",
-      title: "Ler Livros",
-      completed: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const { data } = await axios.get(
+        "https://jsonplaceholder.cypress.io/todos?_limit=10"
+      );
+
+      setTasks(data);
+    };
+
+    fetchTasks();
+  }, []);
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
@@ -38,7 +40,7 @@ const App = () => {
       ...tasks,
       {
         title: taskTitle,
-        id: uiidv4(),
+        id: uuidv4(),
         completed: false,
       },
     ];
@@ -47,7 +49,7 @@ const App = () => {
   };
 
   const handleTaskDeletion = (taskId) => {
-    const newTasks = tasks.filter((task) => task.id != taskId);
+    const newTasks = tasks.filter((task) => task.id !== taskId);
 
     setTasks(newTasks);
   };
@@ -70,7 +72,7 @@ const App = () => {
             </>
           )}
         />
-        <Route path="/:taskTitle" exact render={TaskDetails} />
+        <Route path="/:taskTitle" exact component={TaskDetails} />
       </div>
     </Router>
   );
