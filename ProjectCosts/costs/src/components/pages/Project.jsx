@@ -98,14 +98,37 @@ const Project = () => {
       body: JSON.stringify(project),
     })
       .then((resp) => resp.json())
-      .then((data) => {
-        // exibir os serviços
-        console.log(data);
+      .then(() => {
+        setShowServiceForm(false);
       })
       .catch((err) => console.log(err));
   };
 
-  const removeService = () => {};
+  const removeService = (id, cost) => {
+    const servicesUpdate = project.services.filter(
+      (service) => service.id !== id
+    );
+
+    const projectUpdated = project;
+
+    projectUpdated.services = servicesUpdate;
+    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost);
+
+    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectUpdated),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(projectUpdated);
+        setServices(servicesUpdate);
+        setMessage("Serviço removido com sucesso");
+      })
+      .catch((err) => console.log(err));
+  };
 
   const toggleProjectForm = () => {
     setShowProjectForm(!showProjectForm);
