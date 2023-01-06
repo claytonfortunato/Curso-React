@@ -22,19 +22,21 @@ const Projects = () => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/projects", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setProjects(data);
-        setRemoveLoading(true);
+    setTimeout(() => {
+      fetch("http://localhost:5000/projects", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .catch((err) => console.log(err));
+        .then((resp) => resp.json())
+        .then((data) => {
+          console.log(data);
+          setProjects(data);
+          setRemoveLoading(true);
+        })
+        .catch((err) => console.log(err));
+    }, 3000);
   }, []);
 
   function RemoveProject(id) {

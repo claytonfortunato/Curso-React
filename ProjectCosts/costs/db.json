@@ -1,22 +1,22 @@
 {
   "projects": [
     {
-      "name": "Projeto teste",
-      "budget": "5000",
+      "name": "Atualizado projeto",
+      "budget": "4000",
       "category": {
-        "id": "3",
-        "name": "Desing"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": [],
       "id": 1
     },
     {
-      "name": "Projeto test 4",
-      "budget": "10000",
+      "name": "Projeto test 6",
+      "budget": "6000",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "3",
+        "name": "Desing"
       },
       "cost": 0,
       "services": [],
