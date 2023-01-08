@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   useEffect(() => {
     fetch("http://localhost:3000/static/shoes.json")
-      .then((resp) => resp.json())
+      .then((response) => response.json())
       .then(console.log);
   }, []);
 
