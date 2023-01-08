@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -24,6 +25,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.container .carousel::-webkit-scrollbar {
+  display: none;
+}
+
 .container .carousel .item {
   background-color: white;
   margin: 10px;
@@ -40,7 +45,7 @@ body {
 }
 
 .container .carousel .item .info {
-  height: 140px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
