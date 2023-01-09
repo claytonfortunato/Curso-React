@@ -23,7 +23,10 @@ function App() {
             obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Minima odio nostrum maxime voluptatum praesentium eligendi hic
             reiciendis eum officia corporis? Esse accusamus enim quo corporis
-            porro blanditiis, sit aperiam eum?
+            porro blanditiis, sit aperiam eum? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Itaque provident, maiores quia illo
+            porro corrupti asperiores consequatur nisi alias illum tenetur. Ab
+            debitis minus consectetur aliquam. Dolores maxime omnis placeat.
           </p>
         </Modal>
       ) : null}
