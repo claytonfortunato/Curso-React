@@ -1,9 +1,15 @@
+import { Outlet } from "react-router-dom";
+
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <h1>React Axios</h1>
+      <Navbar />
+      <div className="container">
+        <Outlet />
+      </div>
     </div>
   );
 }
