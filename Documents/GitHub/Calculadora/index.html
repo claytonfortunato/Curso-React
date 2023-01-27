@@ -14,42 +14,37 @@
     />
   </head>
   <body>
-    <div class="container-calculator">
-      <div class="calculator">
-        <h1>Calculadora</h1>
-        <div class="result">
-          <p>resultado</p>
-        </div>
-        <div class="group-calculator">
-          <button>C</button>
-          <button>%</button>
-          <button>+/-</button>
-          <button class="group-color">÷</button>
-        </div>
-        <div class="group-calculator">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button class="group-color">x</button>
-        </div>
-        <div class="group-calculator">
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button class="group-color">-</button>
-        </div>
-        <div class="group-calculator">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button class="group-color">+</button>
-        </div>
-        <div class="group-calculator">
-          <button>0</button>
-          <button>,</button>
-          <button class="group-color">=</button>
-        </div>
+    <div class="container">
+      <div class="result">
+        <span>0</span>
+      </div>
+      <div class="container-group-calculator">
+        <button class="item item1 clear">AC</button>
+        <button class="item percent sign" value="+ -">+/-</button>
+        <button class="item item1 negative" value="%">%</button>
+        <button class="item item3 sign" value="/">÷</button>
+
+        <button class="item numbers" value="7">7</button>
+        <button class="item numbers" value="8">8</button>
+        <button class="item numbers" value="9">9</button>
+        <button class="item item3 sign" value="x">x</button>
+
+        <button class="item numbers" value="4">4</button>
+        <button class="item numbers" value="5">5</button>
+        <button class="item numbers" value="6">6</button>
+        <button class="item item3 sign" value="-">-</button>
+
+        <button class="item numbers" value="1">1</button>
+        <button class="item numbers" value="2">2</button>
+        <button class="item numbers" value="3">3</button>
+        <button class="item item3 sign" value="+">+</button>
+
+        <button class="item itemZero numbers" value="0">0</button>
+        <button class="item numbers cooma" value=".">,</button>
+        <button class="item item3 equals">=</button>
       </div>
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
