@@ -5,7 +5,9 @@ import quiz from "../img/quiz.svg";
 import "./Welcome.css";
 
 const Welcome = () => {
-  const { quizState, dispatch } = useContext(QuizContext);
+  const [quizState, dispatch] = useContext(QuizContext);
+
+  console.log(quizState);
 
   return (
     <div id="welcome">

@@ -1,17 +1,20 @@
-#welcome {
+#gameover {
   text-align: center;
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
-#welcomeh2,
-#welcome p {
+#gameover h2,
+#gameover p {
   margin-bottom: 1rem;
 }
 
-#welcome p {
+#gameover p {
   color: #8435de;
 }
 
-#welcome img {
-  margin-top: 2rem;
+#gameover img {
+  margin: 2rem;
+  height: 200px;
 }
